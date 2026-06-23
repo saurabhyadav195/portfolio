@@ -34,13 +34,13 @@ import type { IconType } from 'react-icons'
    NAV LINKS
    ===================================================== */
 export const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Education', href: '#education' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Achievements', href: '#achievements' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'Education', href: '/education' },
+  { label: 'Skills', href: '/skills' },
+  { label: 'Experience', href: '/experience' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Achievements', href: '/achievements' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 /* =====================================================
@@ -282,32 +282,4 @@ export const projects = [
   },
 ]
 
-/* =====================================================
-   ACHIEVEMENTS
-   ===================================================== */
-export const achievements = [
-  {
-    id: 1,
-    title: 'Diploma in Automation and Robotics',
-    description: 'Completed with strong proficiency in industrial automation, embedded systems, and IoT development.',
-    icon: '🎓',
-  },
-  {
-    id: 2,
-    title: 'PLC and SCADA Internship',
-    description: 'Successfully completed hands-on training in PLC programming and SCADA interface design.',
-    icon: '🏭',
-  },
-  {
-    id: 3,
-    title: 'Cyber Smart AI Prime Internship',
-    description: 'Completed comprehensive training in AI fundamentals, networking, and cybersecurity.',
-    icon: '🛡️',
-  },
-  {
-    id: 4,
-    title: 'Continuous Learning in AI, Robotics & IoT',
-    description: 'Actively expanding expertise through self-directed projects and research in emerging technologies.',
-    icon: '🚀',
-  },
-]
+

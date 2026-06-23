@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { HiAcademicCap } from 'react-icons/hi2'
 import SectionWrapper from './SectionWrapper'
 import { educationData } from '../data/constants'
-import { useTheme } from '../context/ThemeContext'
 import { useTranslation } from '../context/I18nContext'
 
 const itemVariants = {
@@ -15,15 +14,12 @@ const itemVariants = {
 }
 
 export default function Education() {
-  const { theme } = useTheme()
   const { t } = useTranslation()
 
   return (
     <SectionWrapper id="education">
       <motion.div variants={itemVariants} className="mb-12">
-        <p className={`text-sm font-mono tracking-wider uppercase mb-2 ${
-          theme === 'light' ? 'text-[var(--color-accent-dark)]' : 'text-[var(--color-accent)]'
-        }`}>
+        <p className="text-sm font-mono tracking-wider uppercase mb-2 text-[var(--color-accent)] font-semibold">
           {t('education.subtitle')}
         </p>
         <h2 className="section-title">
@@ -37,11 +33,7 @@ export default function Education() {
       {/* Timeline */}
       <div className="relative">
         {/* Timeline line */}
-        <div
-          className={`absolute left-6 md:left-8 top-0 bottom-0 w-px ${
-            theme === 'light' ? 'bg-[rgba(6,182,212,0.15)]' : 'bg-[rgba(6,182,212,0.15)]'
-          }`}
-        />
+        <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-[rgba(14,107,168,0.15)]" />
 
         <div className="space-y-8">
           {educationData.map((edu, index) => (
@@ -49,19 +41,19 @@ export default function Education() {
               key={edu.id}
               variants={itemVariants}
               custom={index}
-              className="relative pl-16 md:pl-20"
+              className="relative pl-16 md:pl-20 text-left"
             >
               {/* Timeline dot */}
               <div className="absolute left-4 md:left-6 top-6 w-4 h-4 rounded-full border-2 border-[var(--color-accent)] z-10"
                 style={{
-                  background: edu.current ? 'var(--color-accent)' : theme === 'light' ? 'var(--color-light-bg-primary)' : 'var(--color-bg-primary)',
-                  boxShadow: edu.current ? '0 0 12px rgba(6, 182, 212, 0.4)' : 'none',
+                  background: edu.current ? 'var(--color-accent)' : 'var(--color-bg-primary)',
+                  boxShadow: edu.current ? '0 0 12px rgba(14, 107, 168, 0.4)' : 'none',
                 }}
               />
 
               {/* Card */}
               <div className="glass-card p-6 md:p-8">
-                <div className="flex items-start justify-between gap-4 mb-4">
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <HiAcademicCap className="w-5 h-5 text-[var(--color-accent)]" />
@@ -71,25 +63,19 @@ export default function Education() {
                         </span>
                       )}
                     </div>
-                    <h3 className={`text-lg md:text-xl font-bold ${
-                      theme === 'light' ? 'text-[var(--color-light-text-primary)]' : 'text-[var(--color-text-primary)]'
-                    }`}>
+                    <h3 className="text-lg md:text-xl font-bold text-[var(--color-text-primary)]">
                       {edu.degree}
                     </h3>
                     {edu.field && (
-                      <p className="text-[var(--color-accent)] text-sm font-medium mt-0.5">
+                      <p className="text-[var(--color-accent)] text-sm font-semibold mt-0.5 font-display">
                         {edu.field}
                       </p>
                     )}
-                    <p className={`text-sm mt-1 ${
-                      theme === 'light' ? 'text-[var(--color-light-text-secondary)]' : 'text-[var(--color-text-secondary)]'
-                    }`}>
+                    <p className="text-sm mt-1 text-[var(--color-text-secondary)]">
                       {edu.institution}
                     </p>
                   </div>
-                  <span className={`text-sm font-mono whitespace-nowrap ${
-                    theme === 'light' ? 'text-[var(--color-light-text-muted)]' : 'text-[var(--color-text-muted)]'
-                  }`}>
+                  <span className="text-xs font-mono font-semibold whitespace-nowrap text-[var(--color-text-secondary)] px-3 py-1 rounded-full bg-[rgba(14,107,168,0.06)] self-start">
                     {edu.period}
                   </span>
                 </div>
@@ -99,11 +85,7 @@ export default function Education() {
                   {edu.topics.map(topic => (
                     <span
                       key={topic}
-                      className={`text-xs font-medium px-3 py-1.5 rounded-lg transition-colors ${
-                        theme === 'light'
-                          ? 'bg-[rgba(6,182,212,0.08)] text-[var(--color-accent-dark)] hover:bg-[rgba(6,182,212,0.15)]'
-                          : 'bg-[rgba(6,182,212,0.08)] text-[var(--color-accent-light)] hover:bg-[rgba(6,182,212,0.15)]'
-                      }`}
+                      className="text-xs font-medium px-3 py-1.5 rounded-lg transition-colors bg-[rgba(14,107,168,0.06)] text-[var(--color-accent)] hover:bg-[rgba(14,107,168,0.12)]"
                     >
                       {topic}
                     </span>

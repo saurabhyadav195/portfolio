@@ -31,7 +31,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
       <motion.div
         initial={{ opacity: 1 }}
         exit={{ opacity: 0, y: -20, transition: { duration: 0.4, ease: 'easeInOut' } }}
-        className="fixed inset-0 z-[100] bg-[#0a0f1a] flex flex-col items-center justify-center font-mono"
+        className="fixed inset-0 z-[100] bg-[var(--color-bg-primary)] flex flex-col items-center justify-center font-mono"
       >
         <div className="space-y-6 w-72 text-left">
           {/* Header */}
@@ -41,7 +41,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
           </div>
 
           {/* Loading bar */}
-          <div className="h-1 w-full bg-[var(--color-border)] rounded-full overflow-hidden relative">
+          <div className="h-1.5 w-full bg-[var(--color-border)] rounded-full overflow-hidden relative">
             <motion.div
               className="h-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)]"
               style={{ width: `${percent}%` }}

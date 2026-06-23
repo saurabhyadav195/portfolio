@@ -2,7 +2,7 @@ import { motion, type Variants } from 'framer-motion'
 import type { ReactNode } from 'react'
 
 interface SectionWrapperProps {
-  id: string
+  id?: string
   children: ReactNode
   className?: string
 }

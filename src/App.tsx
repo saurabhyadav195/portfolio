@@ -1,18 +1,17 @@
 import { useState } from 'react'
-import { ThemeProvider } from './context/ThemeContext'
+import { Routes, Route } from 'react-router-dom'
 import { I18nProvider } from './context/I18nContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import About from './components/About'
 import Education from './components/Education'
 import Skills from './components/Skills'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Achievements from './components/Achievements'
-import GitHubActivity from './components/GitHubActivity'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Loader from './components/Loader'
+import ScrollToTop from './components/ScrollToTop'
 
 function AppContent() {
   const [isLoading, setIsLoading] = useState(true)
@@ -24,7 +23,7 @@ function AppContent() {
   return (
     <div className="relative min-h-screen">
       {/* Background decoration elements */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-30 dark:opacity-20">
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-30">
         <div className="absolute top-0 -left-40 h-[600px] w-[600px] rounded-full bg-cyan-500/10 blur-[120px]" />
         <div className="absolute top-[40%] -right-40 h-[500px] w-[500px] rounded-full bg-violet-500/10 blur-[120px]" />
         <div className="absolute bottom-0 left-[20%] h-[600px] w-[600px] rounded-full bg-emerald-500/10 blur-[120px]" />
@@ -32,16 +31,16 @@ function AppContent() {
 
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow">
-          <Hero />
-          <About />
-          <Education />
-          <Skills />
-          <Experience />
-          <Projects />
-          <Achievements />
-          <GitHubActivity />
-          <Contact />
+        <main className="flex-grow pt-20">
+          <Routes>
+            <Route path="/" element={<Hero />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/achievements" element={<Achievements />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
         </main>
         <Footer />
       </div>
@@ -51,11 +50,9 @@ function AppContent() {
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <I18nProvider>
-        <AppContent />
-      </I18nProvider>
-    </ThemeProvider>
+    <I18nProvider>
+      <ScrollToTop />
+      <AppContent />
+    </I18nProvider>
   )
 }
-
