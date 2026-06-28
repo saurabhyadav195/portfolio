@@ -69,6 +69,8 @@ export const translations = {
       description: "Let's discuss opportunities, collaborations, or engineering projects.",
       infoTitle: "Contact Information",
       emailLabel: "Email",
+      emailMe: "Email Me",
+      viewResume: "View Resume",
       locationLabel: "Location",
       locationValue: "Mumbai, India",
       connectWithMe: "Connect with me",

@@ -31,7 +31,7 @@ function AppContent() {
 
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-20">
+        <main className="grow pt-20">
           <Routes>
             <Route path="/" element={<Hero />} />
             <Route path="/education" element={<Education />} />

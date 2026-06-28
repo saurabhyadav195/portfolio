@@ -8,7 +8,7 @@ interface SectionWrapperProps {
 }
 
 const sectionVariants: Variants = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
@@ -25,16 +25,17 @@ export default function SectionWrapper({ id, children, className = '' }: Section
     <motion.section
       id={id}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
+      animate="visible"
       variants={sectionVariants}
-      className={`py-20 md:py-28 ${className}`}
+      // min-h-screen ensures shorter pages look well-framed and professional
+      className={`min-h-[calc(100vh-80px)] py-12 md:py-16 flex flex-col justify-start overflow-hidden ${className}`}
     >
-      <div className="section-container">
+
+      <div className="h-25 w-full shrink-0" />
+
+      <div className="section-container relative z-10 pt-12 pb-16 md:pt-16 md:pb-20 w-full grow flex flex-col justify-start">
         {children}
       </div>
     </motion.section>
   )
 }
-
-export { sectionVariants }

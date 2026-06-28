@@ -31,26 +31,26 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
       <motion.div
         initial={{ opacity: 1 }}
         exit={{ opacity: 0, y: -20, transition: { duration: 0.4, ease: 'easeInOut' } }}
-        className="fixed inset-0 z-[100] bg-[var(--color-bg-primary)] flex flex-col items-center justify-center font-mono"
+        className="fixed inset-0 z-100 bg-bg-primary flex flex-col items-center justify-center font-mono"
       >
         <div className="space-y-6 w-72 text-left">
           {/* Header */}
-          <div className="flex items-center justify-between text-xs text-[var(--color-accent)] font-semibold uppercase tracking-wider">
+          <div className="flex items-center justify-between text-xs text-(--color-accent) font-semibold uppercase tracking-wider">
             <span>{t('loader.initializing')}</span>
             <span>{Math.round(percent)}%</span>
           </div>
 
           {/* Loading bar */}
-          <div className="h-1.5 w-full bg-[var(--color-border)] rounded-full overflow-hidden relative">
+          <div className="h-1.5 w-full bg-border rounded-full overflow-hidden relative">
             <motion.div
-              className="h-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)]"
+              className="h-full bg-linear-to-r from-(--color-accent) to-accent-light"
               style={{ width: `${percent}%` }}
               layout
             />
           </div>
 
           {/* Status logs */}
-          <div className="text-[10px] text-[var(--color-text-muted)] space-y-1 h-12 overflow-hidden">
+          <div className="text-[10px] text-(--color-text-muted) space-y-1 h-12 overflow-hidden">
             {percent > 10 && <p className="animate-pulse">{t('loader.log1')}</p>}
             {percent > 35 && <p className="animate-pulse">{t('loader.log2')}</p>}
             {percent > 65 && <p className="animate-pulse">{t('loader.log3')}</p>}

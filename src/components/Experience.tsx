@@ -19,7 +19,7 @@ export default function Experience() {
   return (
     <SectionWrapper id="experience">
       <motion.div variants={itemVariants} className="mb-12">
-        <p className="text-sm font-mono tracking-wider uppercase mb-2 text-[var(--color-accent)] font-semibold">
+        <p className="text-sm font-mono tracking-wider uppercase mb-2 text-(--color-accent) font-semibold">
           {t('experience.subtitle')}
         </p>
         <h2 className="section-title">
@@ -41,19 +41,19 @@ export default function Experience() {
           >
             <div className="flex items-start gap-4 mb-5">
               <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
                 style={{ background: 'var(--color-accent-subtle)' }}
               >
-                <HiBriefcase className="w-6 h-6 text-[var(--color-accent)]" />
+                <HiBriefcase className="w-6 h-6 text-(--color-accent)" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-[var(--color-text-primary)]">
+                <h3 className="text-lg font-bold text-(--color-text-primary)">
                   {internship.title}
                 </h3>
-                <p className="text-[var(--color-accent)] text-sm font-semibold mt-0.5">
+                <p className="text-(--color-accent) text-sm font-semibold mt-0.5">
                   {internship.company}
                 </p>
-                <p className="text-xs font-mono font-semibold mt-1 text-[var(--color-text-secondary)]">
+                <p className="text-xs font-mono font-semibold mt-1 text-(--color-text-secondary)">
                   {internship.period}
                 </p>
               </div>
@@ -62,8 +62,8 @@ export default function Experience() {
             <ul className="space-y-3 flex-1">
               {internship.responsibilities.map((resp, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <HiCheckCircle className="w-4 h-4 text-[var(--color-accent)] mt-0.5 flex-shrink-0" />
-                  <span className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                  <HiCheckCircle className="w-4 h-4 text-(--color-accent) mt-0.5 shrink-0" />
+                  <span className="text-sm leading-relaxed text-(--color-text-secondary)">
                     {resp}
                   </span>
                 </li>

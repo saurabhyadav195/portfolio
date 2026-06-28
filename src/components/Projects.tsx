@@ -19,7 +19,7 @@ export default function Projects() {
   return (
     <SectionWrapper id="projects">
       <motion.div variants={itemVariants} className="mb-12">
-        <p className="text-sm font-mono tracking-wider uppercase mb-2 text-[var(--color-accent)] font-semibold">
+        <p className="text-sm font-mono tracking-wider uppercase mb-2 text-(--color-accent) font-semibold">
           {t('projects.subtitle')}
         </p>
         <h2 className="section-title">
@@ -48,17 +48,17 @@ export default function Projects() {
                 <div className="flex-1 space-y-4">
                   <div>
                     <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-xl md:text-2xl font-bold text-[var(--color-text-primary)]">
+                      <h3 className="text-xl md:text-2xl font-bold text-(--color-text-primary)">
                         {project.title}
                       </h3>
-                      <HiArrowTopRightOnSquare className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity text-[var(--color-text-secondary)]" />
+                      <HiArrowTopRightOnSquare className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity text-(--color-text-secondary)" />
                     </div>
                     <p className="text-sm font-semibold" style={{ color: project.color }}>
                       {project.category}
                     </p>
                   </div>
 
-                  <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
+                  <p className="text-sm leading-relaxed text-(--color-text-secondary)">
                     {project.description}
                   </p>
 
@@ -67,7 +67,7 @@ export default function Projects() {
                     {project.technologies.map(tech => (
                       <span
                         key={tech}
-                        className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-[rgba(14,107,168,0.06)] text-[var(--color-accent)]"
+                        className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-[rgba(14,107,168,0.06)] text-(--color-accent)"
                       >
                         {tech}
                       </span>
@@ -76,18 +76,18 @@ export default function Projects() {
                 </div>
 
                 {/* Features sidebar */}
-                <div className="lg:w-72 lg:border-l lg:pl-6 pt-4 lg:pt-0 border-t lg:border-t-0 border-[var(--color-border)]">
-                  <p className="text-xs font-semibold uppercase tracking-wider mb-3 text-[var(--color-text-secondary)] font-mono">
+                <div className="lg:w-72 lg:border-l lg:pl-6 pt-4 lg:pt-0 border-t lg:border-t-0 border-border">
+                  <p className="text-xs font-semibold uppercase tracking-wider mb-3 text-(--color-text-secondary) font-mono">
                     {t('projects.keyFeatures')}
                   </p>
                   <ul className="space-y-2">
                     {project.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <div
-                          className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
+                          className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0"
                           style={{ background: project.color }}
                         />
-                        <span className="text-xs leading-relaxed text-[var(--color-text-secondary)]">
+                        <span className="text-xs leading-relaxed text-(--color-text-secondary)">
                           {feature}
                         </span>
                       </li>

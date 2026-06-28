@@ -21,7 +21,7 @@ export default function Achievements() {
   return (
     <SectionWrapper id="achievements">
       <motion.div variants={itemVariants} className="mb-12">
-        <p className="text-sm font-mono tracking-wider uppercase mb-2 text-[var(--color-accent)] font-semibold">
+        <p className="text-sm font-mono tracking-wider uppercase mb-2 text-(--color-accent) font-semibold">
           {t('github.subtitle')}
         </p>
         <h2 className="section-title">
@@ -38,8 +38,8 @@ export default function Achievements() {
         <motion.div variants={itemVariants} className="glass-card p-6 md:col-span-2">
           <div className="flex items-center justify-between mb-5">
             <div className="flex items-center gap-3">
-              <FaGithub className="w-5 h-5 text-[var(--color-text-primary)]" />
-              <h3 className="text-base font-bold text-[var(--color-text-primary)]">
+              <FaGithub className="w-5 h-5 text-(--color-text-primary)" />
+              <h3 className="text-base font-bold text-(--color-text-primary)">
                 {t('github.graphTitle')}
               </h3>
             </div>
@@ -47,7 +47,7 @@ export default function Achievements() {
               href={`https://github.com/${GITHUB_USERNAME}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm text-[var(--color-accent)] hover:text-[var(--color-accent-light)] transition-colors font-semibold"
+              className="flex items-center gap-1.5 text-sm text-(--color-accent) hover:text-accent-light transition-colors font-semibold"
             >
               {t('github.viewProfile')}
               <HiArrowTopRightOnSquare className="w-4 h-4" />
@@ -65,7 +65,7 @@ export default function Achievements() {
 
         {/* GitHub Stats */}
         <motion.div variants={itemVariants} className="glass-card p-6">
-          <h3 className="text-base font-bold mb-4 text-[var(--color-text-primary)]">
+          <h3 className="text-base font-bold mb-4 text-(--color-text-primary)">
             {t('github.statsTitle')}
           </h3>
           <img
@@ -78,7 +78,7 @@ export default function Achievements() {
 
         {/* Top Languages */}
         <motion.div variants={itemVariants} className="glass-card p-6">
-          <h3 className="text-base font-bold mb-4 text-[var(--color-text-primary)]">
+          <h3 className="text-base font-bold mb-4 text-(--color-text-primary)">
             {t('github.languagesTitle')}
           </h3>
           <img

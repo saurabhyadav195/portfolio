@@ -22,7 +22,7 @@ export default function Contact() {
   return (
     <SectionWrapper id="contact">
       <motion.div variants={itemVariants} className="mb-12 text-center lg:text-left">
-        <p className="text-sm font-mono tracking-wider uppercase mb-2 text-[var(--color-accent)] font-semibold">
+        <p className="text-sm font-mono tracking-wider uppercase mb-2 text-(--color-accent) font-semibold">
           {t('contact.subtitle')}
         </p>
         <h2 className="section-title">
@@ -42,9 +42,9 @@ export default function Contact() {
         >
           <div className="relative group max-w-sm w-full">
             {/* Ambient background glow behind image */}
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-cyan-500 to-violet-500 opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-300" />
+            <div className="absolute -inset-1 rounded-2xl bg-linear-to-r from-cyan-500 to-violet-500 opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-300" />
             
-            <div className="relative rounded-2xl overflow-hidden glass-card p-2 bg-white border border-[var(--color-border)] shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden glass-card p-2 bg-white border border-border shadow-2xl">
               <img
                 src={saurabhImg}
                 alt="Saurabh Yadav"
@@ -60,16 +60,16 @@ export default function Contact() {
             {/* Email Action Card */}
             <a
               href="mailto:saurabhy.in@gmail.com"
-              className="flex items-center gap-4 p-5 rounded-xl border border-[var(--color-border)] bg-white hover:bg-[rgba(14,107,168,0.04)] hover:border-[var(--color-accent)] transition-all duration-300 group hover:scale-[1.02]"
+              className="flex items-center gap-4 p-5 rounded-xl border border-border bg-white hover:bg-[rgba(14,107,168,0.04)] hover:border-(--color-accent) transition-all duration-300 group hover:scale-[1.02]"
             >
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-[var(--color-accent-subtle)] text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-accent-subtle text-(--color-accent) group-hover:scale-110 transition-transform duration-300">
                 <HiEnvelope className="w-6 h-6" />
               </div>
               <div className="overflow-hidden">
-                <h4 className="font-bold text-sm text-[var(--color-text-primary)]">
-                  Email Me
+                <h4 className="font-bold text-sm text-(--color-text-primary)">
+                  {t('contact.emailMe')}
                 </h4>
-                <p className="text-xs truncate text-[var(--color-text-secondary)] font-medium">
+                <p className="text-xs truncate text-(--color-text-secondary) font-medium">
                   saurabhy.in@gmail.com
                 </p>
               </div>
@@ -80,31 +80,31 @@ export default function Contact() {
               href={resumePdf}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-5 rounded-xl border border-[var(--color-border)] bg-white hover:bg-[rgba(14,107,168,0.04)] hover:border-[var(--color-accent)] transition-all duration-300 group hover:scale-[1.02]"
+              className="flex items-center gap-4 p-5 rounded-xl border border-border bg-white hover:bg-[rgba(14,107,168,0.04)] hover:border-(--color-accent) transition-all duration-300 group hover:scale-[1.02]"
             >
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-[var(--color-accent-subtle)] text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-300">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-accent-subtle text-(--color-accent) group-hover:scale-110 transition-transform duration-300">
                 <HiDocumentArrowDown className="w-6 h-6" />
               </div>
               <div className="overflow-hidden">
-                <h4 className="font-bold text-sm text-[var(--color-text-primary)]">
-                  View Resume
+                <h4 className="font-bold text-sm text-(--color-text-primary)">
+                  {t('contact.viewResume')}
                 </h4>
-                <p className="text-xs truncate text-[var(--color-text-secondary)] font-medium">
+                <p className="text-xs truncate text-(--color-text-secondary) font-medium">
                   saurabh_resume.pdf
                 </p>
               </div>
             </a>
 
             {/* Location Info Card */}
-            <div className="flex items-center gap-4 p-5 rounded-xl border border-[var(--color-border)] bg-white sm:col-span-2">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-[var(--color-accent-subtle)] text-[var(--color-accent)]">
+            <div className="flex items-center gap-4 p-5 rounded-xl border border-border bg-white sm:col-span-2">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-accent-subtle text-(--color-accent)">
                 <HiMapPin className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-sm text-[var(--color-text-primary)]">
+                <h4 className="font-bold text-sm text-(--color-text-primary)">
                   {t('contact.locationLabel')}
                 </h4>
-                <p className="text-xs text-[var(--color-text-secondary)] font-medium">
+                <p className="text-xs text-(--color-text-secondary) font-medium">
                   {t('contact.locationValue')}
                 </p>
               </div>
@@ -112,8 +112,8 @@ export default function Contact() {
           </div>
 
           {/* Social Links Panel */}
-          <div className="pt-6 border-t border-[var(--color-border)]">
-            <p className="text-xs font-mono uppercase tracking-wider mb-4 text-center lg:text-left text-[var(--color-text-secondary)]">
+          <div className="pt-6 border-t border-border">
+            <p className="text-xs font-mono uppercase tracking-wider mb-4 text-center lg:text-left text-(--color-text-secondary)">
               {t('contact.connectWithMe')}
             </p>
             <div className="flex items-center justify-center lg:justify-start gap-4">
@@ -129,7 +129,7 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="p-3.5 rounded-xl border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] hover:border-[var(--color-border-hover)] hover:bg-[var(--color-accent-subtle)] bg-white transition-all duration-300 hover:scale-110"
+                  className="p-3.5 rounded-xl border border-border text-(--color-text-secondary) hover:text-(--color-accent) hover:border-border-hover hover:bg-accent-subtle bg-white transition-all duration-300 hover:scale-110"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
