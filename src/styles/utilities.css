@@ -1,0 +1,153 @@
+/* =====================================================
+   UTILITIES.CSS — Reset, Layout, Buttons, Scrollbar
+   ===================================================== */
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg-primary);
+  overflow-x: hidden;
+}
+
+/* ── Focus Visible ── */
+:focus-visible {
+  outline: 2px solid var(--color-accent-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Selection Highlight ── */
+::selection {
+  background: rgba(14, 107, 168, 0.2);
+  color: var(--color-text-primary);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-blue);
+}
+
+/* ── Section Container ── */
+.section-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding: 0 4rem;
+  }
+}
+
+/* ── Shared Card Base ── */
+.simple-card {
+  background: var(--color-bg-card);
+  border-radius: var(--card-radius);
+  border: 1.5px solid var(--color-border);
+  box-shadow: var(--card-shadow);
+  transition: var(--card-transition);
+}
+
+.simple-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* ── Glass Card ── */
+.glass-card {
+  background: var(--color-bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--card-radius);
+  transition: var(--card-transition);
+}
+
+.glass-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* ── Primary Button ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(14, 107, 168, 0.25);
+}
+
+/* ── Outline Button ── */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: transparent;
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  border: 1.5px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  background: var(--color-accent-subtle);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(14, 107, 168, 0.1);
+}
+
+/* ── Grid Background Pattern ── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(14, 107, 168, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 107, 168, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}

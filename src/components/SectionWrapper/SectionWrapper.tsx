@@ -27,11 +27,9 @@ export default function SectionWrapper({ id, children, className = '' }: Section
       initial="hidden"
       animate="visible"
       variants={sectionVariants}
-      // min-h-screen ensures shorter pages look well-framed and professional
       className={`min-h-[calc(100vh-80px)] py-12 md:py-16 flex flex-col justify-start overflow-hidden ${className}`}
     >
-
-      <div className="h-25 w-full shrink-0" />
+      <div className="h-24 w-full shrink-0" />
 
       <div className="section-container relative z-10 pt-12 pb-16 md:pt-16 md:pb-20 w-full grow flex flex-col justify-start">
         {children}

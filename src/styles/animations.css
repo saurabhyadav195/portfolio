@@ -1,0 +1,47 @@
+/* =====================================================
+   ANIMATIONS.CSS — Keyframes & Shared Transition Helpers
+   ===================================================== */
+
+/* ── Keyframe: Fade In Up ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Keyframe: Fade In ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Keyframe: Pulse Glow ── */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(14, 107, 168, 0); }
+  50%       { box-shadow: 0 0 16px 4px rgba(14, 107, 168, 0.18); }
+}
+
+/* ── Keyframe: Shimmer (loading skeleton) ── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── Shared Hover Lift — applied by component CSS ── */
+.hover-lift {
+  transition: var(--card-transition);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* ── Smooth Transition All ── */
+.transition-smooth {
+  transition: all 0.25s ease;
+}

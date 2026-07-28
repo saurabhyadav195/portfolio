@@ -1,0 +1,54 @@
+/* =====================================================
+   VARIABLES.CSS — Central Design Token Registry
+   ===================================================== */
+
+:root {
+  /* ── Color Palette ── */
+  --color-bg-primary:    #EDF9FE;
+  --color-bg-secondary:  #ffffff;
+  --color-bg-card:       #ffffff;
+  --color-bg-card-hover: #f0f8ff;
+  --color-bg-glass:      rgba(237, 249, 254, 0.85);
+
+  --color-text-primary:   #001C55;
+  --color-text-secondary: #7F8DAA;
+  --color-text-muted:     #7F8DAA;
+
+  --color-accent:        #001C55;
+  --color-accent-blue:   #0E6BA8;
+  --color-accent-light:  #3a86c8;
+  --color-accent-dark:   #0a4b7c;
+  --color-accent-subtle: rgba(14, 107, 168, 0.08);
+  --color-accent-glow:   rgba(14, 107, 168, 0.12);
+
+  --color-border:       rgba(0, 28, 85, 0.08);
+  --color-border-hover: rgba(14, 107, 168, 0.25);
+
+  /* ── Card Design Tokens ── */
+  --card-padding:        2rem;        /* 32px */
+  --card-padding-lg:     2.25rem;     /* 36px */
+  --card-radius:         1.25rem;     /* 20px */
+  --card-radius-inner:   0.75rem;     /* 12px */
+  --card-shadow:         0 4px 20px rgba(0, 28, 85, 0.05);
+  --card-shadow-hover:   0 12px 36px rgba(14, 107, 168, 0.12);
+  --card-transition:     all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Section Tokens ── */
+  --section-gap:         5rem;        /* 80px vertical rhythm */
+  --section-gap-sm:      3rem;
+
+  /* ── Spacing ── */
+  --spacing-section:     6rem;
+
+  /* ── Font Families ── */
+  --font-sans:    'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* ── Border Radii ── */
+  --radius-sm:  0.375rem;  /* 6px */
+  --radius-md:  0.5rem;    /* 8px */
+  --radius-lg:  0.75rem;   /* 12px */
+  --radius-xl:  1rem;      /* 16px */
+  --radius-2xl: 1.5rem;    /* 24px */
+}

@@ -1,0 +1,55 @@
+/* =====================================================
+   FOOTER.CSS — Site Footer Section
+   ===================================================== */
+
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding: 3rem 0;
+  background: var(--color-bg-secondary);
+}
+
+.footer-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Name heading */
+.footer-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+}
+
+/* Title / role subtitle */
+.footer-title {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  max-width: 28rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Quote */
+.footer-quote {
+  font-size: 0.8125rem;
+  font-family: var(--font-mono);
+  font-style: italic;
+  color: var(--color-text-muted);
+  max-width: 38rem;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Copyright line */
+.footer-copyright {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  max-width: 18rem;
+  margin: 0 auto;
+}

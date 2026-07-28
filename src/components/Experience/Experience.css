@@ -1,0 +1,120 @@
+/* =====================================================
+   EXPERIENCE.CSS — Internship Cards
+   ===================================================== */
+
+/* ── Cards Grid ── */
+.experience-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .experience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Card ── */
+.experience-card {
+  background: var(--color-bg-card);
+  border-radius: var(--card-radius);
+  border: 1.5px solid var(--color-border);
+  box-shadow: var(--card-shadow);
+  padding: var(--card-padding-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: var(--card-transition);
+  text-align: left;
+  height: 100%;
+}
+
+.experience-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-5px);
+}
+
+/* ── Card Header ── */
+.experience-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Icon container */
+.experience-icon-wrap {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-xl);
+  background: var(--color-accent-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.experience-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-accent-blue);
+}
+
+/* Title info block */
+.experience-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.experience-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  font-family: var(--font-display);
+  line-height: 1.3;
+  margin-bottom: 0.2rem;
+}
+
+.experience-company {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent-blue);
+}
+
+.experience-period {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-top: 0.2rem;
+}
+
+/* ── Responsibilities List ── */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+  list-style: none;
+}
+
+.experience-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.experience-check-icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-accent-blue);
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.experience-resp-text {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+}

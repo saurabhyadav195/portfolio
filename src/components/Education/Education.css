@@ -1,0 +1,174 @@
+/* =====================================================
+   EDUCATION.CSS — Education Cards with Header + Body
+   ===================================================== */
+
+/* ── Cards Stack ── */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+/* ── Card Wrapper ── */
+.education-card {
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  border: 1.5px solid var(--color-border);
+  transition: var(--card-transition);
+}
+
+.education-card:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-4px);
+  border-color: var(--color-border-hover);
+}
+
+/* ── Card Header (colored band) ── */
+.education-header {
+  background: linear-gradient(135deg, #001C55 0%, #0E6BA8 100%);
+  padding: 2rem 2.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle decorative circle behind header */
+.education-header::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.education-header::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+/* Header top row: institution badge row */
+.education-header-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.875rem;
+}
+
+/* "Current" badge */
+.education-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Period pill */
+.education-period {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.12);
+  padding: 0.3rem 0.875rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Institution name (large, white) */
+.education-institution {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: var(--font-display);
+  line-height: 1.3;
+  margin-bottom: 0.375rem;
+}
+
+/* Degree line */
+.education-degree {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: var(--font-display);
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
+}
+
+/* Field of study */
+.education-field {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* ── Card Body (white) ── */
+.education-body {
+  background: var(--color-bg-card);
+  padding: 1.75rem 2.25rem;
+}
+
+/* Topics / coursework heading */
+.education-topics-label {
+  font-size: 0.6875rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+/* Topic tags grid */
+.education-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Individual topic tag */
+.education-topic-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.4rem 0.875rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-accent-subtle);
+  color: var(--color-accent-blue);
+  transition: background 0.2s ease;
+}
+
+.education-topic-tag:hover {
+  background: var(--color-accent-glow);
+}
+
+/* Lightning icon before each topic */
+.education-topic-tag::before {
+  content: '⚡';
+  font-size: 0.75rem;
+}

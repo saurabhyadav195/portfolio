@@ -1,0 +1,209 @@
+/* =====================================================
+   CONTACT.CSS — Contact Section: Profile Image, Cards, Socials
+   ===================================================== */
+
+/* ── Section Layout ── */
+.contact-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .contact-layout {
+    flex-direction: row;
+    gap: 4rem;
+  }
+}
+
+/* ── Profile Image Column ── */
+.contact-image-col {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .contact-image-col {
+    justify-content: flex-start;
+    width: auto;
+  }
+}
+
+/* Image wrapper with ring */
+.contact-image-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.contact-image-ring {
+  width: 13rem;
+  height: 13rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(14, 107, 168, 0.20);
+  box-shadow: 0 8px 32px rgba(14, 107, 168, 0.12);
+}
+
+@media (min-width: 768px) {
+  .contact-image-ring {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+
+.contact-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Outer decorative ring */
+.contact-image-outer-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(14, 107, 168, 0.10);
+  pointer-events: none;
+}
+
+/* ── Info Column ── */
+.contact-info-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: left;
+  width: 100%;
+}
+
+/* ── Action Cards Grid ── */
+.contact-action-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 480px) {
+  .contact-action-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Action card (link or div) */
+.contact-action-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-2xl);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  text-decoration: none;
+  transition: var(--card-transition);
+}
+
+.contact-action-card:hover {
+  background: rgba(14, 107, 168, 0.03);
+  border-color: var(--color-border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow);
+}
+
+/* Action card icon circle */
+.contact-action-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-xl);
+  background: var(--color-accent-subtle);
+  color: var(--color-accent-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.contact-action-card:hover .contact-action-icon {
+  transform: scale(1.08);
+}
+
+.contact-action-svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Action card text */
+.contact-action-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.contact-action-value {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin-top: 0.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Full-width card (location) */
+.contact-action-card--wide {
+  grid-column: 1 / -1;
+}
+
+/* ── Social Links Row ── */
+.contact-social-section {
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.5rem;
+}
+
+.contact-social-label {
+  font-size: 0.6875rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.contact-social-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.contact-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem;
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.contact-social-btn:hover {
+  color: var(--color-accent-blue);
+  border-color: var(--color-border-hover);
+  background: var(--color-accent-subtle);
+  transform: scale(1.08);
+}
+
+.contact-social-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}

@@ -1,0 +1,100 @@
+/* =====================================================
+   HERO.CSS — Home Page Hero Section
+   ===================================================== */
+
+/* Hero section wrapper */
+.hero-section {
+  min-height: calc(100vh - 5rem);
+  display: flex;
+  align-items: center;
+}
+
+/* Content container */
+.hero-content {
+  max-width: 56rem;
+  text-align: left;
+}
+
+/* Category label above title */
+.hero-label {
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent-blue);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* Name heading */
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-family: var(--font-display);
+}
+
+.hero-title-name {
+  color: var(--color-text-primary);
+}
+
+/* Role subtitle */
+.hero-role {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-accent-blue);
+  margin-top: 0.25rem;
+}
+
+/* Intro text paragraphs */
+.hero-subtitle {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  max-width: 38rem;
+}
+
+.hero-intro {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary);
+  max-width: 52rem;
+}
+
+/* CTA buttons row */
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
+
+/* Social icons row */
+.hero-social-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1rem;
+}
+
+/* Individual social icon button */
+.hero-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.hero-social-btn:hover {
+  color: var(--color-accent-blue);
+  border-color: var(--color-border-hover);
+  background: var(--color-accent-subtle);
+  transform: scale(1.1);
+}
