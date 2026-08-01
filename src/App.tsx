@@ -1,17 +1,15 @@
 import { useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
 import { I18nProvider } from './context/I18nContext'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
-import Education from './components/Education/Education'
 import Skills from './components/Skills/Skills'
+import Education from './components/Education/Education'
 import Experience from './components/Experience/Experience'
 import Projects from './components/Projects/Projects'
 import Achievements from './components/Achievements/Achievements'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import Loader from './components/Loader/Loader'
-import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 function AppContent() {
   const [isLoading, setIsLoading] = useState(true)
@@ -31,16 +29,14 @@ function AppContent() {
 
       <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar />
-        <main className="grow pt-20">
-          <Routes>
-            <Route path="/"             element={<Hero />}         />
-            <Route path="/education"    element={<Education />}    />
-            <Route path="/skills"       element={<Skills />}       />
-            <Route path="/experience"   element={<Experience />}   />
-            <Route path="/projects"     element={<Projects />}     />
-            <Route path="/achievements" element={<Achievements />} />
-            <Route path="/contact"      element={<Contact />}      />
-          </Routes>
+        <main>
+          <Hero />
+          <Skills />
+          <Education />
+          <Experience />
+          <Projects />
+          <Achievements />
+          <Contact />
         </main>
         <Footer />
       </div>
@@ -51,7 +47,6 @@ function AppContent() {
 export default function App() {
   return (
     <I18nProvider>
-      <ScrollToTop />
       <AppContent />
     </I18nProvider>
   )

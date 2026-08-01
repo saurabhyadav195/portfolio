@@ -25,13 +25,12 @@ export default function SectionWrapper({ id, children, className = '' }: Section
     <motion.section
       id={id}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.15 }}
       variants={sectionVariants}
-      className={`min-h-[calc(100vh-80px)] py-12 md:py-16 flex flex-col justify-start overflow-hidden ${className}`}
+      className={`section-block overflow-hidden ${className}`}
     >
-      <div className="h-24 w-full shrink-0" />
-
-      <div className="section-container relative z-10 pt-12 pb-16 md:pt-16 md:pb-20 w-full grow flex flex-col justify-start">
+      <div className="section-container w-full">
         {children}
       </div>
     </motion.section>

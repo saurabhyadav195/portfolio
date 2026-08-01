@@ -41,27 +41,29 @@ export default function Experience() {
             variants={itemVariants}
             className="experience-card"
           >
-            {/* Card header */}
+            {/* ── Gradient Blue Header ── */}
             <div className="experience-card-header">
-              <div className="experience-icon-wrap">
-                <HiBriefcase className="experience-icon" />
+              <div className="experience-header-top">
+                <div className="experience-icon-wrap">
+                  <HiBriefcase className="experience-icon" />
+                </div>
+                <span className="experience-period">{internship.period}</span>
               </div>
-              <div className="experience-meta">
-                <h3 className="experience-title">{internship.title}</h3>
-                <p className="experience-company">{internship.company}</p>
-                <p className="experience-period">{internship.period}</p>
-              </div>
+              <h3 className="experience-title">{internship.title}</h3>
+              <p className="experience-company">{internship.company}</p>
             </div>
 
-            {/* Responsibilities list */}
-            <ul className="experience-list">
-              {internship.responsibilities.map((resp, index) => (
-                <li key={index} className="experience-list-item">
-                  <HiCheckCircle className="experience-check-icon" />
-                  <span className="experience-resp-text">{resp}</span>
-                </li>
-              ))}
-            </ul>
+            {/* ── White Content Body ── */}
+            <div className="experience-card-body">
+              <ul className="experience-list">
+                {internship.responsibilities.map((resp, index) => (
+                  <li key={index} className="experience-list-item">
+                    <HiCheckCircle className="experience-check-icon" />
+                    <span className="experience-resp-text">{resp}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
         ))}
       </div>

@@ -40,7 +40,7 @@ export default function Skills() {
             variants={itemVariants}
             className="skills-card"
           >
-            {/* Card header: icon circle + category name */}
+            {/* ── Gradient Blue Header ── */}
             <div className="skills-card-header">
               <div className="skills-icon-circle">
                 <category.icon className="skills-icon" />
@@ -48,18 +48,17 @@ export default function Skills() {
               <h3 className="skills-category-title">{category.title}</h3>
             </div>
 
-            {/* Thin divider */}
-            <hr className="skills-divider" />
-
-            {/* Skill items list */}
-            <ul className="skills-list">
-              {category.skills.map((skill) => (
-                <li key={skill.name} className="skill-item">
-                  <skill.icon className="skill-icon" />
-                  <span className="skill-name">{skill.name}</span>
-                </li>
-              ))}
-            </ul>
+            {/* ── White Content Body ── */}
+            <div className="skills-card-body">
+              <ul className="skills-list">
+                {category.skills.map((skill) => (
+                  <li key={skill.name} className="skill-item">
+                    <skill.icon className="skill-icon" />
+                    <span className="skill-name">{skill.name}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
         ))}
       </div>

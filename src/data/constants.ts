@@ -34,13 +34,13 @@ import type { IconType } from 'react-icons'
    NAV LINKS
    ===================================================== */
 export const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Education', href: '/education' },
-  { label: 'Skills', href: '/skills' },
-  { label: 'Experience', href: '/experience' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Achievements', href: '/achievements' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Home',         href: '#hero'         },
+  { label: 'Skills',       href: '#skills'       },
+  { label: 'Education',    href: '#education'    },
+  { label: 'Experience',   href: '#experience'   },
+  { label: 'Projects',     href: '#projects'     },
+  { label: 'Achievements', href: '#achievements' },
+  { label: 'Contact',      href: '#contact'      },
 ]
 
 /* =====================================================

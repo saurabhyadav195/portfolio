@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedinIn, FaInstagram } from 'react-icons/fa'
 import { SiCodewars } from 'react-icons/si'
 import { HiDocumentArrowDown, HiEnvelope, HiArrowRight } from 'react-icons/hi2'
-import { Link } from 'react-router-dom'
+
 import { useTranslation } from '../../context/I18nContext'
 import resumePdf from '../../assets/saurabh_resume.pdf'
 import SectionWrapper from '../SectionWrapper/SectionWrapper'
@@ -69,15 +69,23 @@ export default function Hero() {
 
           {/* CTA buttons */}
           <motion.div variants={itemVariants} className="hero-cta-row">
-            <Link to="/projects" className="btn-primary">
+            <a
+              href="#projects"
+              onClick={(e) => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }) }}
+              className="btn-primary"
+            >
               {t('hero.viewProjects')} <HiArrowRight style={{ width: 16, height: 16 }} className="animate-pulse" />
-            </Link>
+            </a>
             <a href={resumePdf} target="_blank" rel="noopener noreferrer" className="btn-outline">
               <HiDocumentArrowDown style={{ width: 16, height: 16 }} /> {t('hero.downloadResume')}
             </a>
-            <Link to="/contact" className="btn-outline">
+            <a
+              href="#contact"
+              onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }}
+              className="btn-outline"
+            >
               <HiEnvelope style={{ width: 16, height: 16 }} /> {t('hero.contactMe')}
-            </Link>
+            </a>
           </motion.div>
 
           {/* Social icons */}
