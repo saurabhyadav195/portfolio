@@ -22,9 +22,9 @@ function AppContent() {
     <div className="relative min-h-screen">
       {/* Background decoration blobs */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-30">
-        <div className="absolute top-0 -left-40 h-[600px] w-[600px] rounded-full bg-cyan-500/10 blur-[120px]" />
-        <div className="absolute top-[40%] -right-40 h-[500px] w-[500px] rounded-full bg-violet-500/10 blur-[120px]" />
-        <div className="absolute bottom-0 left-[20%] h-[600px] w-[600px] rounded-full bg-emerald-500/10 blur-[120px]" />
+        <div className="absolute top-0 -left-40 h-150 w-150 rounded-full bg-cyan-500/10 blur-[120px]" />
+        <div className="absolute top-[40%] -right-40 h-125 w-125 rounded-full bg-violet-500/10 blur-[120px]" />
+        <div className="absolute bottom-0 left-[20%] h-150 w-150 rounded-full bg-emerald-500/10 blur-[120px]" />
       </div>
 
       <div className="relative z-10 flex flex-col min-h-screen">

@@ -10,16 +10,22 @@ interface I18nContextType {
 const I18nContext = createContext<I18nContextType | undefined>(undefined)
 
 // Helper to access nested objects via string dot notation (e.g., 'skills.title')
-function getNestedValue(obj: any, path: string): string {
+function getNestedValue(obj: unknown, path: string): string {
   const keys = path.split('.')
-  let current = obj
+  let current: unknown = obj
+
   for (const key of keys) {
-    if (current && typeof current === 'object' && key in current) {
-      current = current[key]
+    if (
+      current &&
+      typeof current === 'object' &&
+      key in (current as Record<string, unknown>)
+    ) {
+      current = (current as Record<string, unknown>)[key]
     } else {
       return path
     }
   }
+
   return typeof current === 'string' ? current : path
 }
 
@@ -38,6 +44,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   )
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useTranslation() {
   const context = useContext(I18nContext)
   if (!context) {

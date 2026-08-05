@@ -37,7 +37,7 @@
   grid-column: 1 / -1;
 }
 
-/* ── Contribution Graph Card Header ── */
+/* ── Card Header ── */
 .achievements-card-header {
   display: flex;
   align-items: center;
@@ -80,31 +80,213 @@
   color: var(--color-accent-light);
 }
 
-/* Contribution chart image */
-.achievements-chart-wrap {
-  overflow-x: auto;
-  padding-bottom: 0.5rem;
-}
+/* ─────────────────────────────────────────────────────────────
+   CONTRIBUTION GRAPH
+───────────────────────────────────────────────────────────── */
 
-.achievements-chart-img {
+/* Outer wrapper */
+.contrib-graph {
   width: 100%;
-  min-width: 680px;
-  border-radius: var(--radius-lg);
-  display: block;
 }
 
-/* Stats card title */
-.achievements-stat-title {
-  font-size: 1rem;
+/* Loading / error placeholder */
+.contrib-loading {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.contrib-loading--error {
+  color: #c0392b;
+}
+
+/* Calendar Container
+   ROOT CAUSE FIX: The old `width: 100% !important` on .react-activity-calendar
+   was forcing the SVG to squish into the container width. The library renders
+   an SVG with a fixed computed width based on (blockSize + blockMargin) × numWeeks.
+   The fix: let the SVG use its natural width and allow horizontal scrolling. */
+.contrib-calendar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  /* Allow the calendar to scroll horizontally on narrow viewports */
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* Scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.contrib-calendar-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+.contrib-calendar-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.contrib-calendar-container::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+/* DO NOT force width on .react-activity-calendar.
+   The SVG must render at its natural computed width.
+   Any width override will compress or distort the graph. */
+.react-activity-calendar__scroll-container {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  padding: 4px 2px;
+}
+
+/* SVG Text styling */
+.react-activity-calendar__legend-month text,
+.react-activity-calendar__legend-weekday text {
+  font-family: var(--font-mono) !important;
+  font-size: 0.6875rem !important;
+  fill: var(--color-text-secondary) !important;
+}
+
+/* SVG Cell interactive styling */
+.contrib-cell {
+  cursor: pointer;
+  outline: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    transform 0.14s cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter 0.14s ease;
+}
+
+.contrib-cell:hover,
+.contrib-cell:focus-visible {
+  transform: scale(1.25);
+  filter: brightness(1.15);
+}
+
+.contrib-cell:focus-visible {
+  stroke: var(--color-accent-blue);
+  stroke-width: 1.5px;
+}
+
+/* Contribution level palette */
+.contrib-cell--level-0 { background: #eaeff8; }
+.contrib-cell--level-1 { background: #b3cde8; }
+.contrib-cell--level-2 { background: #70a9d4; }
+.contrib-cell--level-3 { background: #3a7dba; }
+.contrib-cell--level-4 { background: #0e6ba8; }
+
+/* ── Legend ── */
+.contrib-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.25rem;
+  justify-content: flex-end;
+}
+
+.contrib-legend-label {
+  font-size: 0.6875rem;
+  font-family: var(--font-mono);
+  color: var(--color-text-secondary);
+}
+
+.contrib-legend-cells {
+  display: flex;
+  gap: 4px;
+}
+
+.contrib-cell-legend {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CONTRIBUTION TOOLTIP
+───────────────────────────────────────────────────────────── */
+
+.contrib-tooltip {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+
+  background: #ffffff;
+  border: 1px solid rgba(0, 28, 85, 0.12);
+  border-radius: 10px;
+  box-shadow:
+    0 4px 16px rgba(0, 28, 85, 0.10),
+    0 1px 4px rgba(0, 28, 85, 0.06);
+  padding: 0.625rem 0.875rem;
+  min-width: 160px;
+  max-width: 220px;
+
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+
+  /* Start hidden */
+  opacity: 0;
+  transform: scale(0.88) translateY(4px);
+  transform-origin: bottom center;
+  transition:
+    opacity 0.17s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.17s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contrib-tooltip--visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Arrow — points downward by default (tooltip is above the cell) */
+.contrib-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-right: 1px solid rgba(0, 28, 85, 0.12);
+  border-bottom: 1px solid rgba(0, 28, 85, 0.12);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* Arrow points upward when tooltip is below the cell */
+.contrib-tooltip--below::after {
+  bottom: auto;
+  top: -6px;
+  transform: translateX(-50%) rotate(225deg);
+}
+
+.contrib-tooltip__count {
+  font-size: 0.8125rem;
   font-weight: 700;
   color: var(--color-text-primary);
-  font-family: var(--font-display);
-  margin-bottom: 1rem;
+  line-height: 1.4;
 }
 
-/* Stats/languages images */
-.achievements-stat-img {
-  width: 100%;
-  border-radius: var(--radius-lg);
-  display: block;
+.contrib-tooltip__date {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .contrib-tooltip {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    min-width: 130px;
+  }
+
+  /* Reduce card padding on mobile so the graph has more horizontal space */
+  .achievements-card--wide {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
 }
